@@ -4,6 +4,7 @@ import './App.css';
 import snoowrap from 'snoowrap';
 import { USER_AGENT, CLIENT_ID, CLIENT_SECRET, USERNAME, PASSWORD } from './config';
 import ImageGrid from './Components/ImageGrid/ImageGrid';
+import ImageGallery from './Components/ImageGallery/ImageGallery';
 
 const r = new snoowrap({
   userAgent: USER_AGENT,
@@ -24,7 +25,7 @@ const App = () => {
     subreddit = window.location.href.split("/r/")[1];
   }
   selectedSub = r.getSubreddit(subreddit);
-  
+
   const toggleHQImage = () => {
     setHQImages(!showHQImages);
   }
@@ -34,6 +35,8 @@ const App = () => {
       console.log(posts)
       setPosts(posts);
       setIsLoading(false);
+    }).catch(() => {
+      setIsLoading(false);
     })
   }, []);
 
@@ -42,19 +45,20 @@ const App = () => {
       <input type="checkbox" checked={showHQImages} onClick={toggleHQImage}></input>
       <h5>Displaying {showHQImages? "high" : "normal"} quality images</h5>
       {isLoading ? "Loading..." : (
-        <div>
-          <h3>{posts.length} posts from {subreddit} </h3>
-          {
-            posts.map((post, index) => {
-              console.log(post.url)
-              if(!post.stickied){
-                return (
-                  <ImageGrid title={post.title} url={post.url} key={index} preview={post.preview} showHQImages={showHQImages} />
-                );
-              }
-            })
-          }
-        </div>
+        <ImageGallery posts={posts} />
+        // <div>
+        //   <h3>{posts.length} posts from {subreddit} </h3>
+        //   {
+        //     posts.map((post, index) => {
+        //       console.log(post.url)
+        //       if(!post.stickied){
+        //         return (
+        //           <ImageGrid title={post.title} url={post.url} key={index} preview={post.preview} showHQImages={showHQImages} />
+        //         );
+        //       }
+        //     })
+        //   }
+        // </div>
       )
       }
     </Fragment> 
