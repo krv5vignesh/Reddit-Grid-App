@@ -1,5 +1,5 @@
 # Reddit-Grid-App
 
-#How to run 
+# How to run 
 
 > npm install
