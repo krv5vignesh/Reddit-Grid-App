@@ -1,5 +1,4 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import snoowrap from 'snoowrap';
 import { USER_AGENT, CLIENT_ID, CLIENT_SECRET, USERNAME, PASSWORD } from './config';
@@ -23,21 +22,19 @@ const App = () => {
   const [showNsfw, setNsfw] = useState(false);
   const [rowHeight, setRowHeight] = useState(550);
   const [after, setAfter] = useState();
+  const [subreddit, setSubreddit] = useState("popular");
   let postLimit = 10;
-  let subreddit = "popular";
-  let selectedSub;
 
   if(window.location.href.includes("/r/")){
-    subreddit = window.location.href.split("/r/")[1];
+    setSubreddit(window.location.href.split("/r/")[1]);
   }
-  selectedSub = r.getSubreddit(subreddit);
 
   const toggleHQImage = () => {
     setHQImages(!showHQImages);
   }
-
+  
   const loadMore = () => {
-    selectedSub.getHot({after:after,limit:postLimit}).then(newPosts => {
+    r.getSubreddit(subreddit).getHot({after:after,limit:postLimit}).then(newPosts => {
       console.log(newPosts);
       setAfter(newPosts._query.after);
       setPosts([...posts, ...newPosts]);
@@ -48,7 +45,7 @@ const App = () => {
   }
   useBottomScrollListener(loadMore, 500);
   useEffect(() => {
-    selectedSub.getHot({after:after,limit:postLimit}).then(posts => {
+    r.getSubreddit(subreddit).getHot({limit:postLimit}).then(posts => {
       console.log(posts)
       setAfter(posts._query.after);
       setPosts(posts);
@@ -56,17 +53,21 @@ const App = () => {
     }).catch(() => {
       setIsLoading(false);
     })
-  }, []);
+  }, [subreddit]);
 
   return (
     <Fragment>
       <input type="range" min="550" max="1500" value={rowHeight} onChange={(event) => setRowHeight(event.target.value)} />
       {rowHeight}
-      <input type="checkbox" checked={showHQImages} onClick={toggleHQImage}></input>
-      <h5>Displaying {showHQImages? "high" : "normal"} quality images</h5>
+      <br /><br />
+      Subreddit <input type="text" id="subName" value={subreddit} onChange={event => setSubreddit(event.target.value)} />
+      <br /><br />
+      Show source images <input type="checkbox" checked={showHQImages} onClick={toggleHQImage}></input>
+      NSFW <input type="checkbox" checked={showNsfw} onClick={() => setNsfw(!showNsfw)} />
+      <br /><br />
       {isLoading ? "Loading..." : (
         <Fragment>
-          <ImageGallery posts={posts} rowHeight={rowHeight} showNsfw={showNsfw} />
+          <ImageGallery posts={posts} rowHeight={rowHeight} showHQImages={showHQImages} showNsfw={showNsfw} />
         </Fragment>
         // <div>
         //   <h3>{posts.length} posts from {subreddit} </h3>
