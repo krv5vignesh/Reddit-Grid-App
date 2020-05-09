@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Reddit-Grid-App/static/css/main.76e27cc9.chunk.css",
+    "main.js": "/Reddit-Grid-App/static/js/main.867cf2c2.chunk.js",
+    "main.js.map": "/Reddit-Grid-App/static/js/main.867cf2c2.chunk.js.map",
+    "runtime-main.js": "/Reddit-Grid-App/static/js/runtime-main.a77e2c6d.js",
+    "runtime-main.js.map": "/Reddit-Grid-App/static/js/runtime-main.a77e2c6d.js.map",
+    "static/js/2.614c770a.chunk.js": "/Reddit-Grid-App/static/js/2.614c770a.chunk.js",
+    "static/js/2.614c770a.chunk.js.map": "/Reddit-Grid-App/static/js/2.614c770a.chunk.js.map",
+    "index.html": "/Reddit-Grid-App/index.html",
+    "precache-manifest.5ec68086d41ec95a92cb0fafd2db0e34.js": "/Reddit-Grid-App/precache-manifest.5ec68086d41ec95a92cb0fafd2db0e34.js",
+    "service-worker.js": "/Reddit-Grid-App/service-worker.js",
+    "static/css/main.76e27cc9.chunk.css.map": "/Reddit-Grid-App/static/css/main.76e27cc9.chunk.css.map",
+    "static/js/2.614c770a.chunk.js.LICENSE.txt": "/Reddit-Grid-App/static/js/2.614c770a.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/Reddit-Grid-App/static/media/logo.ee7cd8ed.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a77e2c6d.js",
+    "static/js/2.614c770a.chunk.js",
+    "static/css/main.76e27cc9.chunk.css",
+    "static/js/main.867cf2c2.chunk.js"
+  ]
+}
