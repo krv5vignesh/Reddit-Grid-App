@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/Reddit-Grid-App/static/css/main.76e27cc9.chunk.css",
-    "main.js": "/Reddit-Grid-App/static/js/main.bd6a21c1.chunk.js",
-    "main.js.map": "/Reddit-Grid-App/static/js/main.bd6a21c1.chunk.js.map",
+    "main.css": "/Reddit-Grid-App/static/css/main.424809ef.chunk.css",
+    "main.js": "/Reddit-Grid-App/static/js/main.e63e7166.chunk.js",
+    "main.js.map": "/Reddit-Grid-App/static/js/main.e63e7166.chunk.js.map",
     "runtime-main.js": "/Reddit-Grid-App/static/js/runtime-main.a77e2c6d.js",
     "runtime-main.js.map": "/Reddit-Grid-App/static/js/runtime-main.a77e2c6d.js.map",
-    "static/js/2.2e0224f1.chunk.js": "/Reddit-Grid-App/static/js/2.2e0224f1.chunk.js",
-    "static/js/2.2e0224f1.chunk.js.map": "/Reddit-Grid-App/static/js/2.2e0224f1.chunk.js.map",
+    "static/css/2.5f5916c4.chunk.css": "/Reddit-Grid-App/static/css/2.5f5916c4.chunk.css",
+    "static/js/2.d0eff3d4.chunk.js": "/Reddit-Grid-App/static/js/2.d0eff3d4.chunk.js",
+    "static/js/2.d0eff3d4.chunk.js.map": "/Reddit-Grid-App/static/js/2.d0eff3d4.chunk.js.map",
     "index.html": "/Reddit-Grid-App/index.html",
-    "precache-manifest.5009cff32ec697024387c6ebed89e8c9.js": "/Reddit-Grid-App/precache-manifest.5009cff32ec697024387c6ebed89e8c9.js",
+    "precache-manifest.dfc96c3c5426c17e162e3f1ea6be793e.js": "/Reddit-Grid-App/precache-manifest.dfc96c3c5426c17e162e3f1ea6be793e.js",
     "service-worker.js": "/Reddit-Grid-App/service-worker.js",
-    "static/css/main.76e27cc9.chunk.css.map": "/Reddit-Grid-App/static/css/main.76e27cc9.chunk.css.map",
-    "static/js/2.2e0224f1.chunk.js.LICENSE.txt": "/Reddit-Grid-App/static/js/2.2e0224f1.chunk.js.LICENSE.txt"
+    "static/css/2.5f5916c4.chunk.css.map": "/Reddit-Grid-App/static/css/2.5f5916c4.chunk.css.map",
+    "static/css/main.424809ef.chunk.css.map": "/Reddit-Grid-App/static/css/main.424809ef.chunk.css.map",
+    "static/js/2.d0eff3d4.chunk.js.LICENSE.txt": "/Reddit-Grid-App/static/js/2.d0eff3d4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a77e2c6d.js",
-    "static/js/2.2e0224f1.chunk.js",
-    "static/css/main.76e27cc9.chunk.css",
-    "static/js/main.bd6a21c1.chunk.js"
+    "static/css/2.5f5916c4.chunk.css",
+    "static/js/2.d0eff3d4.chunk.js",
+    "static/css/main.424809ef.chunk.css",
+    "static/js/main.e63e7166.chunk.js"
   ]
 }
