@@ -1,16 +1,20 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
 const ImageGrid = ({title, url, preview, showHQImages}) => {
-    let previewImage = preview && preview.images && preview.images.length > 0 ?
-                            preview.images[0] && preview.images[0].resolutions && preview.images[0].resolutions.length > 1 ?
-                                    preview.images[0].resolutions.length > 3 ? 
-                                        preview.images[0].resolutions[3] 
+    const previewImage = preview && preview.enabled && preview.images && preview.images.length > 0 ?
+                            showHQImages ? 
+                                preview.images[0] && preview.images[0].source
+                                :
+                                preview.images[0] && preview.images[0].resolutions && preview.images[0].resolutions.length > 1 ?
+                                        preview.images[0].resolutions.length > 3 ? 
+                                            preview.images[0].resolutions[3] 
+                                            :
+                                            preview.images[0].resolutions[preview.images[0].resolutions.length - 1]
                                         :
-                                        preview.images[0].resolutions[preview.images[0].resolutions.length - 1]
-                                    :
-                                    null
-                            :
-                            null;
+                                        null
+                                :
+                                null;
+
     const [isImage, setIsImage] = useState(false);
     const [isVideo, setIsVideo] = useState(false);
     
@@ -28,18 +32,7 @@ const ImageGrid = ({title, url, preview, showHQImages}) => {
     }, []);
     
     return (
-        //Video disabled for now
-        (isImage /*|| isVideo*/) && <Fragment>
-            <h5>{title}</h5>
-            {isImage && !showHQImages && preview.enabled ?  
-                previewImage && <img src={previewImage.url} width={previewImage.width} height={previewImage.height} />
-                :
-                <img src={url} />
-            }
-            {isVideo && <video>
-                            <source src={url} ></source>
-                        </video>}
-        </Fragment>
+        isImage && previewImage && <img src={previewImage.url} width={"100%"} />
     );
 };
 
