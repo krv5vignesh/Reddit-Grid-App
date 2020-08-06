@@ -2,4 +2,4 @@
 
 # How to run 
 
-> npm install
+> visit https://krv5vignesh.github.io/Reddit-Grid-App/
