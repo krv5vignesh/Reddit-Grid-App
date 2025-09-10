@@ -12,7 +12,7 @@
     "react-bottom-scroll-listener": "^3.0.0",
     "react-dom": "^16.13.1",
     "react-grid-gallery": "^0.5.5",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-stack-grid": "^0.7.1",
     "snoowrap": "^1.21.0"
   },
